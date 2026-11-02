@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Author Admin | VARUN SAI BOOKSTORE</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">VARUN SAI <span>ADMIN</span></a><button id="out" class="btn ghost" hidden>Sign out</button></div></header>
+<main class="wrap"><p id="msg" role="status" class="note" hidden></p>
+<section id="login"><h1>Author sign in</h1><form id="lf"><label for="em">Email</label><input id="em" type="email" autocomplete="username" required><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required><p><button class="btn">Sign in</button></p></form></section>
+<section id="app" hidden><div class="tools"><button class="btn" data-t="books">Books</button><button class="btn ghost" data-t="messages">Messages</button><button class="btn ghost" data-t="reviews">Reviews</button></div><div id="view"></div></section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script><script src="config.js"></script><script src="admin.js"></script></body></html>

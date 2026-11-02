@@ -1,34 +1,15 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Browse books by Varun Sai.">
-  <title>Books | VARUN SAI BOOKSTORE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"  href="style.css"
-</head>
-<body>
-<header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-mark">VS</span><span><strong>VARUN SAI</strong><small>BOOKSTORE</small></span></a>
-  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a class="active" href="books.html">Books</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-</header>
-<main class="page-main">
-  <section class="page-heading"><p class="eyebrow">THE COLLECTION</p><h1>Books by <em>Varun Sai.</em></h1><p class="muted">Explore the current catalogue. Prices, direct eBook checkout and secure downloads will be added in later development phases.</p></section>
-  <div class="catalogue-tools"><label class="search-box"><span>⌕</span><input id="book-search" type="search" placeholder="Search books..." aria-label="Search books"></label></div>
-  <section class="catalogue-list" id="catalogue">
-    <article class="catalogue-item" id="the-time-changes" data-search="the time changes philosophy personal growth motivational">
-      <div class="cover cover-time"><span class="cover-kicker">A PHILOSOPHICAL & MOTIVATIONAL BOOK</span><strong>THE TIME<br>CHANGES</strong><span class="cover-author">VARUN SAI</span></div>
-      <div class="catalogue-copy"><p class="book-category">PERSONAL GROWTH · PHILOSOPHY</p><h2>The Time Changes</h2><p>A journey from awareness to transformation. A philosophical and motivational exploration of self-awareness, discipline, courage, failure and personal change.</p><p class="format-note">eBook · Paperback availability through external retailers</p><div class="button-row"><a class="button button-outline" href="https://store.pothi.com/book/ebook-thipparapu-varun-sai-the-time-changes/" target="_blank" rel="noopener noreferrer">eBook on Pothi</a><a class="button button-gold" href="https://amzn.in/d/0bx8LoKo" target="_blank" rel="noopener noreferrer">View on Amazon</a></div></div>
-    </article>
-    <article class="catalogue-item" id="learn-it-build-it-master-it" data-search="learn it build it master it learning technology">
-      <div class="cover cover-learn"><span class="cover-kicker">LEARNING · TECHNOLOGY</span><strong>LEARN IT.<br>BUILD IT.<br>MASTER IT.</strong><span class="cover-author">VARUN SAI</span></div>
-      <div class="catalogue-copy"><p class="book-category">LEARNING · TECHNOLOGY</p><h2>Learn It. Build It. Master It.</h2><p>Explore this title and its available editions. The retailer purchase links and final book details can be added once the exact listing URLs and description are confirmed.</p><p class="format-note">eBook · Paperback availability through external retailers</p><span class="status-note">Retailer links to be added</span></div>
-    </article>
-  </section>
-  <p class="empty-state" id="empty-state" hidden>No books match your search.</p>
-</main>
-<footer class="site-footer"><a class="footer-brand" href="index.html">VARUN SAI BOOKSTORE</a><p>Independent bookstore of author Varun Sai.</p><small>© <span id="year"></span> Varun Sai. All rights reserved.</small></footer>
-<script src="js/script.js"></script>
-</body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Books | VARUN SAI BOOKSTORE</title><meta name="description" content="Browse and search books by Varun Sai, with links to buy."><link rel="canonical" href="https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/books.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Books | VARUN SAI BOOKSTORE"><meta property="og:description" content="Browse and search books by Varun Sai, with links to buy."><meta property="og:url" content="https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/books.html">
+<meta name="theme-color" content="#171717"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="index.html">VARUN SAI <span>BOOKSTORE</span></a>
+<button class="menu" aria-expanded="false" aria-controls="nav">Menu</button><nav id="nav" aria-label="Main"><a href="index.html">Home</a><a href="books.html" aria-current="page">Books</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div></header>
+<main id="main" class="wrap">
+<section><h1>Books</h1><div class="tools"><input id="q" type="search" placeholder="Search by title or topic" aria-label="Search books"><select id="cat" aria-label="Filter by category"><option value="">All categories</option></select></div><div class="grid" id="books" aria-live="polite"></div></section></main>
+<footer><div class="wrap"><p>Independent bookstore of author Varun Sai. Quality defeats quantity.</p><small>&copy; <span id="year"></span> Varun Sai. All rights reserved.</small></div></footer>
+<script src="script.js"></script></body></html>

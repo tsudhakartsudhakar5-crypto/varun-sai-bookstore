@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/sitemap.xml
+Disallow: /varun-sai-bookstore/admin.html
