@@ -436,6 +436,7 @@
       // Defer database work until after the auth callback completes.
       window.setTimeout(() => handleSession(), 0);
     });
+     document.head.appendChild(Object.assign(document.createElement("script"), { src: "admin-extras.js" }));
 
     handleSession();
   }
