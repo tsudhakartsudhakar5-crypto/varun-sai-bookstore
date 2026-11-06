@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VARUN SAI BOOKSTORE</title><meta name="description" content="Books by Varun Sai on philosophy, personal growth, learning and technology."><link rel="canonical" href="https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/">
 <meta property="og:type" content="website"><meta property="og:title" content="VARUN SAI BOOKSTORE"><meta property="og:description" content="Books by Varun Sai on philosophy, personal growth, learning and technology."><meta property="og:url" content="https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/">
@@ -12,7 +12,24 @@
 <main id="main" class="wrap">
 <div class="hero"><h1>Quality defeats quantity.</h1><p>Books by Varun Sai on philosophy, personal growth, learning and technology. Find them here and buy through trusted retailers.</p><p><a class="btn" href="books.html">Browse books</a></p></div>
 <section><h2>Featured books</h2><div class="grid" id="books"></div></section>
-<section><h2>Upcoming publications</h2><p class="muted">No new titles have been announced yet. They will appear here once confirmed.</p></section>
+<section id="upcoming">
+<h2>Upcoming publications</h2>
+<div class="card">
+<p>COMING SOON</p>
+<h3>THE UNKNOWN TRUTH</h3>
+<p><strong>A Philosophical Fantasy</strong></p>
+<p>242 pages | 29 November 2026</p>
+<p>A journey through knowledge, wisdom, kingdoms, love, trust, money and human behaviour.</p>
+<p id="countdown"></p>
+</div><script>
+const release = new Date("2026-11-29T12:00:00+05:30");
+setInterval(() => {
+let t = release - Date.now();
+document.getElementById("countdown").textContent =
+t > 0 ? Math.floor(t/86400000)+" days remaining" : "Coming soon!";
+}, 1000);
+</script>
+</section>
 <section><h2>About the author</h2><p class="muted">Varun Sai is the author of The Time Changes and Learn It. Build It. Master It.</p><p><a href="about.html">Read more</a></p></section></main>
 <footer><div class="wrap"><p>Independent bookstore of author Varun Sai. Quality defeats quantity.</p><small>&copy; <span id="year"></span> Varun Sai. All rights reserved.</small></div></footer>
 <script src="config.js"></script><script src="script.js"></script></body></html>
