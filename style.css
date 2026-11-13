@@ -31,3 +31,9 @@ input,select,textarea{background:var(--panel);color:var(--text);border:1px solid
 .note{border-left:3px solid var(--gold);background:var(--panel);padding:14px 18px;border-radius:var(--r)}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);margin-top:40px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* DPDP update: consent/notice helpers */
+.check{display:flex;gap:10px;align-items:flex-start;margin:14px 0}
+form input[type=checkbox],.check input[type=checkbox]{width:auto;flex:none;margin-top:6px}
+.prose ul,.prose ol{padding-left:22px}.prose li{margin:6px 0}.prose{max-width:780px}
+footer p a{margin:0 2px}
