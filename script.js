@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded',function(){
  try{var m=document.querySelector('.menu'),n=document.querySelector('nav');
   if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o)})}catch(e){}
  try{var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear()}catch(e){}
- try{var fw=document.querySelector('footer .wrap');if(fw){var pp=el('p'),pa=el('a',0,'Privacy Policy');pa.href='privacy.html';pp.append(pa);fw.append(pp)}}catch(e){}
+ try{var fw=document.querySelector('footer .wrap');if(fw&&!fw.querySelector('a[href="privacy.html"]')){var pp=el('p');[['Privacy Policy','privacy.html'],['Terms of Use','terms.html'],['Your data rights','data-rights.html']].forEach(function(l,i){if(i)pp.append(' \u00b7 ');var a=el('a',0,l[0]);a.href=l[1];pp.append(a)});fw.append(pp)}}catch(e){}
  try{var cat=document.getElementById('cat'),q=document.getElementById('q');
   if(cat&&q){q.addEventListener('input',render);cat.addEventListener('change',render)}}catch(e){}
  try{cats();render()}catch(e){}

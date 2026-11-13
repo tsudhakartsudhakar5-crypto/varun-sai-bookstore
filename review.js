@@ -1,3 +1,9 @@
+/* Reader reviews and adult-only accounts (book pages).
+   INTERIM RULE: accounts and reviews are for people aged 18+. A tick-box is only a declaration, not proof of age
+   and not parental consent. Set ACCOUNTS_OPEN to false to close sign-up and review submission at once.
+   NOTE: book.html must load the Supabase library before this file for this feature to run. */
+var ACCOUNTS_OPEN=true;
+var NOTICE_VERSION='2026-11-13';
 document.addEventListener('DOMContentLoaded',async function(){
  await window.ready;await new Promise(function(r){setTimeout(r,0)});
  var id=new URLSearchParams(location.search).get('b'),b=ALL.filter(function(x){return x.id===id})[0];
@@ -7,6 +13,7 @@ document.addEventListener('DOMContentLoaded',async function(){
  var db=supabase.createClient(SB_URL,SB_KEY),list=el('div'),area=el('div'),note=el('p','muted');
  S.append(list,el('h3',0,'Write a review'),area,note);
  function say(t){note.textContent=t}
+ function link(t,h){var a=el('a',0,t);a.href=h;return a}
  async function showList(){
   var r=await db.from('reviews').select('rating,body,author_reply').eq('book_id',b.dbid).eq('status','approved').order('created_at',{ascending:false});
   list.replaceChildren();
@@ -16,21 +23,33 @@ document.addEventListener('DOMContentLoaded',async function(){
    c.append(el('b',0,'\u2605'.repeat(v.rating)+'\u2606'.repeat(5-v.rating)+'  Reader'));
    if(v.body){var p=el('p',0,v.body);p.style.whiteSpace='pre-line';c.append(p)}
    if(v.author_reply)c.append(el('p','muted','Reply from Varun Sai: '+v.author_reply));list.append(c)})}
- function field(f,id,lbl,t){var i=el(t||'input');i.id=id;f.append(el('label',0,lbl),i);f.lastChild.previousSibling.htmlFor=id;return i}
+ function field(f,id,lbl,t){var l=el('label',0,lbl),i=el(t||'input');i.id=id;l.htmlFor=id;f.append(l,i);return i}
+ function tick(id,parts){var i=el('input');i.type='checkbox';i.id=id;var l=el('label','check');l.htmlFor=id;var s=el('span');
+  parts.forEach(function(x){s.append(typeof x==='string'?document.createTextNode(x):x)});l.append(i,s);return{box:i,label:l}}
  async function showArea(){
   say('');area.replaceChildren();
+  if(!ACCOUNTS_OPEN){area.append(el('p','muted','Reader accounts and new reviews are paused for now. You can still read approved reviews and browse every book.'));return}
   var s=(await db.auth.getSession()).data.session;
   if(!s){
    var f=el('form'),em=field(f,'rem','Email'),pw=field(f,'rpw','Password (at least 8 characters)');em.type='email';pw.type='password';pw.minLength=8;em.required=pw.required=true;
-   var p=el('p'),a=el('button','btn','Sign in'),c=el('button','btn ghost','Create account');a.type='submit';c.type='button';p.append(a,' ',c);f.append(p);
+   var ad=tick('radult',['I am 18 or older. (Accounts and reviews are for adults only. This is a declaration, not proof of age.)']);
+   var pv=tick('rpriv',['I have read the ',link('Privacy Policy','privacy.html'),' and understand my email is used only for my account.']);
+   var p=el('p'),a=el('button','btn','Sign in'),c=el('button','btn ghost','Create account');a.type='submit';c.type='button';p.append(a,' ',c);
+   f.append(el('p','muted','Creating a new account? Please also confirm:'),ad.label,pv.label,p);
    f.addEventListener('submit',async function(e){e.preventDefault();var r=await db.auth.signInWithPassword({email:em.value,password:pw.value});r.error?say('Sign in failed. Check your email and password, or confirm your email first.'):showArea()});
-   c.addEventListener('click',async function(){if(!f.reportValidity())return;var r=await db.auth.signUp({email:em.value,password:pw.value});
-    if(r.error)return say('Could not create the account: '+r.error.message);
+   c.addEventListener('click',async function(){if(!f.reportValidity())return;
+    if(!ad.box.checked)return say('Accounts are for people aged 18 and over. Please tick the box to confirm you are 18 or older.');
+    if(!pv.box.checked)return say('Please confirm that you have read the Privacy Policy.');
+    c.disabled=true;
+    var r=await db.auth.signUp({email:em.value.trim(),password:pw.value,options:{data:{adult_declaration:true,notice_version:NOTICE_VERSION}}});
+    c.disabled=false;
+    if(r.error)return say('We could not create the account. Please check your details and try again. If you already have an account, sign in instead.');
     r.data.session?showArea():say('Almost done. Check your email and tap the confirmation link, then sign in here.')});
    area.append(el('p','muted','Sign in to write a review. Your email is only used for your account and is never shown with your review.'),f);return}
   var f2=el('form'),rt=field(f2,'rrt','Rating','select'),tx=field(f2,'rtx','Your review (optional)','textarea');
   [5,4,3,2,1].forEach(function(n){var o=el('option',0,n+' out of 5');o.value=n;rt.append(o)});tx.maxLength=2000;tx.rows=4;
-  var p2=el('p'),sub=el('button','btn','Submit review'),so=el('button','btn ghost','Sign out');sub.type='submit';so.type='button';p2.append(sub,' ',so);f2.append(p2);
+  var p2=el('p'),sub=el('button','btn','Submit review'),so=el('button','btn ghost','Sign out');sub.type='submit';so.type='button';p2.append(sub,' ',so);
+  f2.append(el('p','muted','Reviews are public once approved and appear as "Reader". Please do not include phone numbers, addresses or other people\'s details.'),p2);
   f2.addEventListener('submit',async function(e){e.preventDefault();sub.disabled=true;
    var r=await db.from('reviews').insert({book_id:b.dbid,user_id:s.user.id,rating:+rt.value,body:tx.value.trim()||null,status:'pending'});
    if(r.error){say(r.error.code==='23505'?'You have already reviewed this book.':'Your review could not be saved. Please try again.');sub.disabled=false}
