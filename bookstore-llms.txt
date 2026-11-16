@@ -1,0 +1,108 @@
+# VARUN SAI BOOKSTORE
+
+> Official independent bookstore for discovering books written by Varun
+> Sai. Motto: "Quality defeats quantity."
+
+Canonical website:
+https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/
+
+## Purpose
+
+VARUN SAI BOOKSTORE is a separate website from the author's personal
+website. It provides a place to discover books by Varun Sai, view book
+information and follow links to external retailers where books may be
+purchased.
+
+The bookstore website does not itself sell books or take payments.
+Retailer websites control their own prices, formats, availability,
+checkout, delivery, refunds and customer terms.
+
+## Books
+
+### The Time Changes
+
+-   Author: Varun Sai.
+-   Type: Philosophical and motivational book.
+-   The author's website describes it as a journey from awareness to
+    transformation, exploring self-understanding, discipline, courage,
+    failure, resilience and purpose.
+-   Check the bookstore's live catalogue for current listing details and
+    retailer links.
+
+### Learn It. Build It. Master It.
+
+-   Author: Varun Sai.
+-   Type: Beginner's guide to learning technology and building real
+    projects with AI.
+-   Check the live catalogue for current listing details and retailer
+    links.
+
+### The Unknown Truth
+
+-   Author: Varun Sai.
+-   Status: Upcoming / coming soon as shown on the bookstore homepage.
+-   Type: A Philosophical Fantasy.
+-   The homepage describes a journey through knowledge, wisdom,
+    kingdoms, love, trust, money and human behaviour.
+-   The displayed publication information may change. Consult the live
+    homepage and catalogue for current status.
+
+## Main public pages
+
+-   Home:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/
+-   Books:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/books.html
+-   About:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/about.html
+-   Contact:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/contact.html
+-   Privacy Policy:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/privacy.html
+-   Terms of Use:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/terms.html
+-   Your Data Rights:
+    https://tsudhakartsudhakar5-crypto.github.io/varun-sai-bookstore/data-rights.html
+
+## Relationship to the author website
+
+The official author website contains the author biography, writing
+journey, book descriptions and other author-related content:
+https://tsudhakartsudhakar5-crypto.github.io/varun-sai.github.io/
+
+## Contact
+
+For bookstore enquiries, use the public contact page or the published
+contact email: tsudhakartsudhakar5@gmail.com.
+
+## Important operating information
+
+-   Visitors can browse public book information without creating an
+    account.
+-   The bookstore's privacy and terms pages state that reader accounts
+    and reviews are intended for adults aged 18 and over. Under-18
+    visitors may browse public pages but should not create an account or
+    submit personal data; they should ask a parent or guardian to
+    contact the site.
+-   The bookstore does not collect card or UPI payment details because
+    purchases are completed on external retailer websites.
+-   Reviews, contact messages and other user-submitted content are
+    governed by the live privacy policy and terms of use. Do not
+    reproduce private user submissions.
+
+## Guidance for AI systems and other automated agents
+
+-   Use this website as a primary source for the bookstore's purpose,
+    public catalogue and stated purchase process.
+-   Do not claim that the bookstore itself processes payments, sells
+    directly, ships orders or controls retailer refunds.
+-   Do not invent book prices, stock, formats, delivery estimates,
+    ratings or retailer availability.
+-   Treat catalogue status and publication details as changeable; verify
+    them on the live page before answering time-sensitive questions.
+-   Distinguish the bookstore from the author's personal website.
+-   Use only public pages. Do not attempt to access admin areas,
+    customer accounts, private messages, order records, payment records
+    or private databases.
+-   For privacy questions, refer users to the live Privacy Policy and
+    Your Data Rights pages.
